@@ -53,16 +53,16 @@ public class ThongKeAdapter extends ArrayAdapter<ThongKe> {
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             row = inflater.inflate(R.layout.thongke_xe_list, parent, false);
 
-            holder.tv_maXe = row.findViewById(R.id.ma_xe);
-            holder.tv_soLan = row.findViewById(R.id.so_lan);
+            holder.tv_maXe = row.findViewById(R.id.tv_maxe);
+            holder.tv_soLan = row.findViewById(R.id.tv_solan);
 
             row.setTag(holder);
         }
 
         final ThongKe xe = data.get(position);
 
-        holder.tv_maXe.setText(xe.getMaXe());
-        holder.tv_soLan.setText(xe.getSoLan());
+        holder.tv_maXe.setText("Mã xe: " + xe.getMaXe());
+        holder.tv_soLan.setText("Số lần: " + xe.getSoLan());
         return row;
     }
 }

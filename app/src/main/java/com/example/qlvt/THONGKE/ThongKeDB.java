@@ -2,6 +2,7 @@ package com.example.qlvt.THONGKE;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -39,6 +40,26 @@ public class ThongKeDB extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void thongKe(ArrayList<ThongKe> thongKes) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        final Cursor cursor = db.rawQuery("Select MaXe, (count(MaXe)) as SL  From PHANCONG Group by MaXe", null);
+
+        if (cursor != null) {
+            try {
+                if (cursor.moveToFirst()) {
+                    do {
+                        ThongKe tk = new ThongKe();
+                        tk.setMaXe(cursor.getString(cursor.getColumnIndex("MaXe")));
+                        tk.setSoLan(cursor.getString(cursor.getColumnIndex("SL")));
+                        thongKes.add(tk);
+                    } while (cursor.moveToNext());
+                }
+            } finally {
+                cursor.close();
+            }
+        }
     }
 
     public void insert(PhanCong phanCong) {

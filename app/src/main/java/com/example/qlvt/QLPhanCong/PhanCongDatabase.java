@@ -104,4 +104,6 @@ public class PhanCongDatabase extends SQLiteOpenHelper {
         db.delete(TB_PHANCONG, COL_PHANCONG_SOPHIEU + " = '" + soPhieu + "'", null);
         db.close();
     }
+
+
 }

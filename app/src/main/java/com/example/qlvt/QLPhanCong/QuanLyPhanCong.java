@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -49,6 +50,7 @@ public class QuanLyPhanCong extends AppCompatActivity implements NavigationView.
     ListView list_DSPC;
     ArrayList<PhanCong> data = new ArrayList<>();
     PhanCongAdapter adapter = null;
+    Button btn_add;
     Toolbar toolbar;
     FloatingActionButton fab;
 
@@ -68,7 +70,7 @@ public class QuanLyPhanCong extends AppCompatActivity implements NavigationView.
         //toolbar = findViewById(R.id.toolbar);
         //fab = findViewById(R.id.fab);
         DrawerLayout drawer = findViewById(R.id.draw_layout);
-
+        btn_add = findViewById(R.id.btn_add);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -110,7 +112,16 @@ public class QuanLyPhanCong extends AppCompatActivity implements NavigationView.
             }
 
         });
+
+        btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

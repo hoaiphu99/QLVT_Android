@@ -93,6 +93,7 @@ public class InsertPhanCongActivity extends AppCompatActivity {
                 else {
                     Snackbar.make(v, "Chưa nhập thông tin!", Snackbar.LENGTH_SHORT).setAction(null, null).show();
                 }
+
             }
         });
 
