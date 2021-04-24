@@ -55,6 +55,7 @@ public class InsertPhanCongActivity extends AppCompatActivity {
 
 
     public void setEvent() {
+        loadData();
         XeDatabase db = new XeDatabase(this);
         spnXes.clear();
         db.getMaXe(spnXes);
@@ -81,6 +82,9 @@ public class InsertPhanCongActivity extends AppCompatActivity {
                     if(et_xuatPhat.getText().toString().equalsIgnoreCase(et_noiDen.getText().toString())){
                         Snackbar.make(v, "Điếm đến và xuất phát không được trùng!", Snackbar.LENGTH_SHORT).setAction(null, null).show();
                     }
+                    else if (checkPrimaryKey(et_soPhieu.getText().toString()) == 1) {
+                        Snackbar.make(v, "Số phiếu đã nhập đã có, nhập lại!", Snackbar.LENGTH_SHORT).setAction(null, null).show();
+                    }
                     else if (checkAgenda(phanCong) == 0) {
                         insert(phanCong);
                         isSave = true;
@@ -88,7 +92,6 @@ public class InsertPhanCongActivity extends AppCompatActivity {
                     }
                     else
                         Snackbar.make(v, "Trùng lịch xe! Vui lòng xem lại", Snackbar.LENGTH_SHORT).setAction(null, null).show();
-                    //Toast.makeText(InsertActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Snackbar.make(v, "Chưa nhập thông tin!", Snackbar.LENGTH_SHORT).setAction(null, null).show();
@@ -125,7 +128,7 @@ public class InsertPhanCongActivity extends AppCompatActivity {
     public int checkAgenda(PhanCong phanCong) {
         ArrayList<PhanCong> tempNgay = new ArrayList<>();
         ArrayList<PhanCong> tempXe = new ArrayList<>();
-        loadData();
+
         for (int i = 0; i < data.size(); i++) {
             if (phanCong.getNgay().equalsIgnoreCase(data.get(i).getNgay())) {
                 tempNgay.add(data.get(i));
@@ -146,6 +149,15 @@ public class InsertPhanCongActivity extends AppCompatActivity {
             }
         }
 
+        return 0;
+    }
+
+    public int checkPrimaryKey(String soPhieu) {
+
+        for (int i = 0; i < data.size(); i++) {
+            if(soPhieu.equalsIgnoreCase(data.get(i).getSoPhieu()))
+                return 1;
+        }
         return 0;
     }
 
