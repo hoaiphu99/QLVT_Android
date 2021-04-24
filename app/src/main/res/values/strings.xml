@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">QLVT</string>
+    <string name="title">QUẢN LÝ VẬN TẢI</string>
+    <string name="ql_phan_cong">QUẢN LÝ PHÂN CÔNG</string>
+    <string name="ql_tai_xe">QUẢN LÝ TÀI XẾ</string>
+    <string name="ql_tuyen_xe">QUẢN LÝ TUYẾN XE</string>
+    <string name="ql_xe">QUẢN LÝ XE</string>
+    <string name="ql_tinh">QUẢN LÝ TỈNH</string>
+    <string name="thong_ke">THỐNG KÊ</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_insert">Thêm mới</string>
+    <string name="action_refresh">Làm mới</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="title_activity_insert">Thêm mới phân công</string>
+    <string name="title_activity_details">Thông tin</string>
+</resources>

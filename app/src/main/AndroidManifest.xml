@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.qlvt">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QLVT">
+        <activity
+            android:name=".QLTaiXe.InsertTaiXeActivity"
+            android:label="QUẢN LÝ TÀI XẾ - INSERT"></activity>
+        <activity
+            android:name=".QLXe.InsertXeActivity"
+            android:label="QUẢN LÝ Xe - INSERT"></activity>
+        <activity
+            android:name=".QLTaiXe.EditTaiXeActivity"
+            android:label="QUẢN LÝ TÀI XẾ - EDIT"></activity>
+        <activity
+            android:name=".QLXe.EditXeActivity"
+            android:label="QUẢN LÝ XE - EDIT"></activity>
+        <activity
+            android:name=".QLPhanCong.InsertPhanCongActivity"
+            android:label="QUẢN LÝ PHÂN CÔNG - INSERT"></activity>
+        <activity
+            android:name=".QLPhanCong.EditPhanCongActivity"
+            android:label="QUẢN LÝ PHÂN CÔNG - EDIT"></activity>
+        <activity
+            android:name=".QLPhanCong.QuanLyPhanCong"
+            android:label="QUẢN LÝ PHÂN CÔNG"></activity>
+        <activity
+            android:name=".QLTaiXe.QuanLyTaiXe"
+            android:label="QUẢN LÝ TÀI XẾ"></activity>
+        <activity
+            android:name=".QLXe.QuanLyXe"
+            android:label="QUẢN LÝ XE"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

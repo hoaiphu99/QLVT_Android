@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.qlvt">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:orderInCategory="100"
+            android:title="DASHBOARD"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/qlphancong"
+            android:orderInCategory="100"
+            android:title="@string/ql_phan_cong"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/qltaixe"
+            android:orderInCategory="100"
+            android:title="@string/ql_tai_xe"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/qltuyen"
+            android:orderInCategory="100"
+            android:title="@string/ql_tuyen_xe"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/qlxe"
+            android:orderInCategory="100"
+            android:title="@string/ql_xe"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/qltinh"
+            android:orderInCategory="100"
+            android:title="@string/ql_tinh"
+            app:showAsAction="never" />
+    </group>
+</menu>
