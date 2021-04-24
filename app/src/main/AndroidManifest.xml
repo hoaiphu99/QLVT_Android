@@ -37,8 +37,11 @@
             android:name=".QLXe.QuanLyXe"
             android:label="QUẢN LÝ XE"></activity>
         <activity
-            android:name=".THONGKE.ThongKeActivity"
-            android:label="Thống kê"></activity>
+            android:name=".THONGKE.ThongKeXeActivity"
+            android:label="Thống kê xe"></activity>
+        <activity
+            android:name=".THONGKE.ThongKeTuyenActivity"
+            android:label="Thống kê tuyến"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

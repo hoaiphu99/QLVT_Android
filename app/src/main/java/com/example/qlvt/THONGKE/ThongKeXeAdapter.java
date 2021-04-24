@@ -3,13 +3,10 @@ package com.example.qlvt.THONGKE;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,12 +16,12 @@ import com.example.qlvt.R;
 
 import java.util.ArrayList;
 
-public class ThongKeAdapter extends ArrayAdapter<ThongKe> {
+public class ThongKeXeAdapter extends ArrayAdapter<ThongKeXe> {
     Context context;
     int resource;
-    ArrayList<ThongKe> data = null;
+    ArrayList<ThongKeXe> data = null;
 
-    public ThongKeAdapter(@NonNull Context context, int resource, @NonNull ArrayList<ThongKe> data) {
+    public ThongKeXeAdapter(@NonNull Context context, int resource, @NonNull ArrayList<ThongKeXe> data) {
         super(context, resource, data);
         this.context = context;
         this.resource = resource;
@@ -59,7 +56,7 @@ public class ThongKeAdapter extends ArrayAdapter<ThongKe> {
             row.setTag(holder);
         }
 
-        final ThongKe xe = data.get(position);
+        final ThongKeXe xe = data.get(position);
 
         holder.tv_maXe.setText("Mã xe: " + xe.getMaXe());
         holder.tv_soLan.setText("Số lần: " + xe.getSoLan());

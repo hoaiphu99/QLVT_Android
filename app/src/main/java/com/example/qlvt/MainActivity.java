@@ -12,7 +12,8 @@ import com.example.qlvt.QLTaiXe.QuanLyTaiXe;
 import com.example.qlvt.QLTinh.QuanLyTinh;
 import com.example.qlvt.QLTuyen.QuanLyTuyen;
 import com.example.qlvt.QLXe.QuanLyXe;
-import com.example.qlvt.THONGKE.ThongKeActivity;
+import com.example.qlvt.THONGKE.ThongKeTuyenActivity;
+import com.example.qlvt.THONGKE.ThongKeXeActivity;
 
 public class MainActivity extends AppCompatActivity {
     //    Button btn_menu_1, btn_menu_2, btn_menu_3, btn_menu_4, btn_menu_5;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, ThongKeActivity.class);
+                Intent intent = new Intent(MainActivity.this, ThongKeTuyenActivity.class);
                 startActivity(intent);
             }
         });

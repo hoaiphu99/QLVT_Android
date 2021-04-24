@@ -1,8 +1,8 @@
 package com.example.qlvt.THONGKE;
 
-public class ThongKe {
+public class ThongKeXe {
     String maXe, soLan;
-    public ThongKe() {
+    public ThongKeXe() {
         this.maXe = maXe;
         this.soLan = soLan;
     }

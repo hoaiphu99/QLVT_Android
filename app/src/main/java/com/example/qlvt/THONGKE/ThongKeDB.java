@@ -20,9 +20,10 @@ public class ThongKeDB extends SQLiteOpenHelper {
     private static int DB_VERSION = 1;
 
     // Define table PhanCong
-    private static final String TB_THONGKE = "THONGKE";
+    private static final String TB_PHANCONG = "PHANCONG";
     private static final String COL_THONGKE_MAXE = "MaXe";
-    private static final String COL_THONGKE_SOLAN = "SoLan";
+    private static final String COL_THONGKE_MATUYEN = "MaTuyen";
+    private static final String COL_THONGKE_SOLAN = "SL";
 
     public ThongKeDB(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -42,17 +43,17 @@ public class ThongKeDB extends SQLiteOpenHelper {
 
     }
 
-    public void thongKe(ArrayList<ThongKe> thongKes) {
+    public void thongKeXe(ArrayList<ThongKeXe> thongKes) {
         SQLiteDatabase db = this.getReadableDatabase();
-        final Cursor cursor = db.rawQuery("Select MaXe, (count(MaXe)) as SL  From PHANCONG Group by MaXe", null);
+        final Cursor cursor = db.rawQuery("Select " + COL_THONGKE_MAXE + ", (count(" + COL_THONGKE_MAXE + ")) as " + COL_THONGKE_SOLAN + "  From " + TB_PHANCONG + " Group by " + COL_THONGKE_MAXE, null);
 
         if (cursor != null) {
             try {
                 if (cursor.moveToFirst()) {
                     do {
-                        ThongKe tk = new ThongKe();
-                        tk.setMaXe(cursor.getString(cursor.getColumnIndex("MaXe")));
-                        tk.setSoLan(cursor.getString(cursor.getColumnIndex("SL")));
+                        ThongKeXe tk = new ThongKeXe();
+                        tk.setMaXe(cursor.getString(cursor.getColumnIndex(COL_THONGKE_MAXE)));
+                        tk.setSoLan(cursor.getString(cursor.getColumnIndex(COL_THONGKE_SOLAN)));
                         thongKes.add(tk);
                     } while (cursor.moveToNext());
                 }
@@ -62,15 +63,24 @@ public class ThongKeDB extends SQLiteOpenHelper {
         }
     }
 
-    public void insert(PhanCong phanCong) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public void thongKeTuyen(ArrayList<ThongKeTuyen> thongKes) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        final Cursor cursor = db.rawQuery("Select " + COL_THONGKE_MATUYEN + ", (count(" + COL_THONGKE_MATUYEN + ")) as " + COL_THONGKE_SOLAN + "  From " + TB_PHANCONG + " Group by " + COL_THONGKE_MATUYEN, null);
 
-        ContentValues values = new ContentValues();
-        values.put(COL_THONGKE_MAXE, phanCong.getMaXe());
-//        values.put(COL_THONGKE_SOLAN, phanCong.get);
-
-        db.insert(TB_THONGKE, null, values);
-
-        db.close();
+        if (cursor != null) {
+            try {
+                if (cursor.moveToFirst()) {
+                    do {
+                        ThongKeTuyen tk = new ThongKeTuyen();
+                        tk.setMaTuyen(cursor.getString(cursor.getColumnIndex(COL_THONGKE_MATUYEN)));
+                        tk.setSoLan(cursor.getString(cursor.getColumnIndex(COL_THONGKE_SOLAN)));
+                        thongKes.add(tk);
+                    } while (cursor.moveToNext());
+                }
+            } finally {
+                cursor.close();
+            }
+        }
     }
+
 }
